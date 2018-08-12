@@ -1,0 +1,19 @@
+.page-wrapper {
+	overflow: hidden;
+	padding: 0;
+}
+
+
+.header {
+	background-color: #fff !important;  
+	font-size: 28px;
+	font-weight: 700;
+	border-bottom-style: groove;
+	border-bottom-width: 1px;
+}
+
+.content {
+	padding-top: 20px;
+	background: #fff;
+}
+
