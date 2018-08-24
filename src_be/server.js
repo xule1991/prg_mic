@@ -22,15 +22,15 @@ app.post('/api/uploadRecord', (req, res) => {
 			if (err) {
 				res.status(500).send(err);
 			}
-			fs.unlink(`${filePath}${path.sep}${name}.wav`, (err) => {
+			fs.unlink(`${filePath}${path.sep}${name}.webm`, (err) => {
 				if (err) {
 					console.log(err);
 				}
-				file.mv(`${filePath}${path.sep}${name}.wav` , (err) => {
+				file.mv(`${filePath}${path.sep}${name}.webm` , (err) => {
 					if (err) {
 						console.log(err)
 					} else {
-						console.log(`${name}.wav stored successfully.`);
+						console.log(`${name}.webm stored successfully.`);
 						res.json({
 							status: 'succeeded'
 						})

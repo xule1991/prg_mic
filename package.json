@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "startbe": "set NODE_ENV=development&&nodemon --watch src_be src_be/server.js",
+    "startbeprod": "node src_be/server.js",
     "start": "set NODE_ENV=development&& roadhog server",
     "build": "set NODE_ENV=production&& roadhog build",
     "lint": "eslint --ext .js src test",
