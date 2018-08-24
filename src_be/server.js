@@ -44,6 +44,7 @@ let server = require('http').createServer(app);
 
 let port = process.env.PORT || 3000;
 let address = process.env.ADDRESS || '0.0.0.0';
+server.address = address;
 server.listen(port, function () {
   console.log('Express server listening on port %d in %s mode', port, app.get('env'))
 })
