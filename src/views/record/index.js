@@ -34,6 +34,7 @@ class Record extends React.Component {
 	    this.setState({
 	      record: true
 	    })
+	    let that = this;
 	    setTimeout(() => {
 	    	let that = this;
 	      that.setState({

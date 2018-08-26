@@ -40,7 +40,14 @@ app.post('/api/uploadRecord', (req, res) => {
 		});
 });
 
-let server = require('http').createServer(app);
+var https = require('https');
+
+var options = {
+    key: fs.readFileSync('./ssl/privatekey.pem'),
+    cert: fs.readFileSync('./ssl/certificate.pem')
+};
+
+let server = require('https').createServer(options, app);
 
 let port = process.env.PORT || 3000;
 let address = process.env.ADDRESS || '0.0.0.0';
