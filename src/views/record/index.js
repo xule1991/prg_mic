@@ -35,10 +35,11 @@ class Record extends React.Component {
 	      record: true
 	    })
 	    setTimeout(() => {
-	      this.setState({
+	    	let that = this;
+	      that.setState({
 	        record: false
 	      });
-	      this.props.handleRecordChange();
+	      that.props.handleRecordChange();
 	    }, this.state.duration * 1000)
 	}
 
