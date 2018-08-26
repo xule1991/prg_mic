@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(fileUpload());
 
+const { exec } = require('child_process');
+
+
 app.post('/api/uploadRecord', (req, res) => {
 	res.setHeader('Content-Type', 'application/json');
 	let name = req.body.name;
@@ -31,9 +34,21 @@ app.post('/api/uploadRecord', (req, res) => {
 						console.log(err)
 					} else {
 						console.log(`${name}.webm stored successfully.`);
-						res.json({
-							status: 'succeeded'
-						})
+						exec(`ffmpge -i ${filePath}${path.sep}${name}.webm ${filePath}${path.sep}${name}.wav`, (err, stdout, stderr) => {
+						  if (err) {
+						  	console.log('errorr')
+						    res.json({
+								status: 'error'
+							});
+						  } else {
+						  	console.log('successss')
+						  	res.json({
+								status: 'succeeded'
+							});
+						  }
+						  
+						});
+						
 					}
 				})
 			})

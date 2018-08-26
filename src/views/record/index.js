@@ -17,7 +17,7 @@ class Record extends React.Component {
 		super(props);
 	    this.state = {
 	      record: false,
-	      duration: 2,
+	      duration: 10,
 	      namingPopup: false,
 	      recordingName: ''
 	    }
