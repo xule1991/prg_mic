@@ -82,7 +82,7 @@ class RecordingApp extends React.Component {
     return (
       <div className="page-wrapper">
         <Layout>
-          <Header className={classnames(styles.header)} style={{"width": "100%", "zIndex": "1000", "position": "fixed"}}><a href="#" className="navbar-brand">Recording App</a></Header>
+          <Header className={classnames(styles.header)} style={{"width": "100%", "zIndex": "1000", "position": "fixed"}}><a href="#" className="navbar-brand">Heart Sound Recording System</a></Header>
           <Layout style={{"marginTop": "64px"}}>
             <Content className={styles.content}>
               <Row>
