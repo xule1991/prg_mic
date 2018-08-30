@@ -34,7 +34,7 @@ app.post('/api/uploadRecord', (req, res) => {
 						console.log(err)
 					} else {
 						console.log(`${name}.webm stored successfully.`);
-						console.log(`ffmpeg -i ${filePath}${path.sep}${name}.webm ${filePath}${path.sep}wav${path.sep}${name}.wav`);
+						console.log(`ffmpeg -i ${filePath}${path.sep}${name}.webm ${filePath}${path.sep}${name}.wav`);
 						exec(`ffmpeg -i ${filePath}${path.sep}${name}.webm ${filePath}${path.sep}${name}.wav`, (err, stdout, stderr) => {
 						  if (err) {
 						  	console.log('err')
@@ -43,6 +43,9 @@ app.post('/api/uploadRecord', (req, res) => {
 							});
 						  } else {
 						  	console.log('successss')
+						  	fs.unlink(`${filePath}${path.sep}${name}.webm`, (err) => {
+						  		console.log(err);
+						  	})
 						  	res.json({
 								status: 'succeeded'
 							});
