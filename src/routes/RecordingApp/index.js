@@ -88,7 +88,7 @@ class RecordingApp extends React.Component {
               <Row>
                 <Col span={1}></Col>
                 <Col span={22}>
-                  <h1 style={{"textAlign": "center", "textDecoration": "underline"}}>Recording App</h1>
+                  <h1 style={{"textAlign": "center", "textDecoration": "underline"}}>Heart Sound Recording System</h1>
                   <div style={{"clear":"both"}}></div>
                   <Tabs defaultActiveKey="1" onChange={this.handleTabChange}>
                       <TabPane tab="Record" key="1">
